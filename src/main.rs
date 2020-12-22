@@ -46,7 +46,8 @@ fn main() {
         expect("fail to serialize tenant");
 
     // create the json file
-    let file_name = format!("{}-tenants-random.json", num_tenants);
+    let file_name = format!("{}-tenants-random-{}.json", 
+        num_tenants, total_num_pods);
 
     if Path::new(&file_name).exists() {
         fs::remove_file(&file_name).
